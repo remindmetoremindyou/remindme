@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Remind Me",
+    "slug": "remind-me",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.example.remindme",
+      "infoPlist": {
+        "UIBackgroundModes": ["location"],
+        "NSLocationWhenInUseUsageDescription": "Remind Me uses your location to pin places on the map.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Remind Me needs 'Always' location access so it can alert you when you arrive at or leave a place, even when the app is closed."
+      }
+    },
+    "android": {
+      "package": "com.example.remindme",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "POST_NOTIFICATIONS"
+      ],
+      "config": { "googleMaps": { "apiKey": "YOUR_GOOGLE_MAPS_API_KEY" } }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true,
+          "locationAlwaysAndWhenInUsePermission": "Remind Me needs 'Always' location access so it can alert you when you arrive at or leave a place, even when the app is closed."
+        }
+      ],
+      "expo-notifications"
+    ]
+  }
+}
